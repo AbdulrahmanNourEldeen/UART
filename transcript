@@ -1,0 +1,54 @@
+# vsim work.UART 
+# Start time: 23:09:52 on Apr 16,2022
+# Loading work.UART
+# Loading work.control_unit
+# Loading work.serializer
+# Loading work.clocks_counter
+# Loading work.parity
+# Loading work.mux
+add wave -position insertpoint  \
+sim:/UART/o_serial_data \
+sim:/UART/o_busy \
+sim:/UART/i_p_data \
+sim:/UART/i_parity_enable \
+sim:/UART/i_parity_type \
+sim:/UART/i_data_valid \
+sim:/UART/i_clk \
+sim:/UART/i_rst
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: user  Hostname: ABDONOUR  ProcessID: 4672
+#           Attempting to use alternate WLF file "./wlfteqzh75".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfteqzh75
+force -freeze sim:/UART/i_clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/UART/i_rst 1 0
+force -freeze sim:/UART/i_data_valid 0 0
+force -freeze sim:/UART/i_parity_type 0 0
+force -freeze sim:/UART/i_parity_enable 1 0
+force -freeze sim:/UART/i_p_data 10011010 0
+run
+force -freeze sim:/UART/i_rst 1 0
+run
+force -freeze sim:/UART/i_rst 0 0
+run
+force -freeze sim:/UART/i_rst 1 0
+run
+force -freeze sim:/UART/i_data_valid 1 0
+run
+force -freeze sim:/UART/i_data_valid 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 23:12:48 on Apr 16,2022, Elapsed time: 0:02:56
+# Errors: 0, Warnings: 2
